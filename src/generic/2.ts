@@ -5,11 +5,24 @@
 */
 
 type AllType = {
-  name: string;
-  position: number;
-  color: string;
-  weight: number
-}
+	name: string;
+	position: number;
+	color: string;
+	weight: number
+};
+
+type Top = Pick<AllType, 'name' | 'color'>;
+type Bottom = Pick<AllType, 'position' | 'weight'>;
+
+const top: Top = {
+  name: 'Block',
+  color: 'green',
+};
+
+const bottom: Bottom = {
+  position: 20,
+  weight: 500,
+};
 
 function compare (top, bottom): AllType {
   return {
